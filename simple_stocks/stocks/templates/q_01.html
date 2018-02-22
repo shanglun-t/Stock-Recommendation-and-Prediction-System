@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Section -->
+<div class="w3-container w3-indigo w3-center" style="padding:120px 16px">
+  <h1 class="w3-large w3-margin-bottom">1.  How long you plan to keep your fund invested?</h1><br />
+  <form class="w3-margin-top">
+   <input type="radio" name="time" value="T1"> less than 1 years<br /><br />
+   <input type="radio" name="time" value="T2"> 1 - 2 years<br /><br />
+   <input type="radio" name="time" value="T3"> 3 - 5 years<br /><br />
+   <input type="radio" name="time" value="T4"> 6 - 10 years<br /><br />
+   <input type="radio" name="time" value="T5"> more than 10 years<br /><br />  
+  </form><br /><br />
+  <a href="/q_disclaimer/" class="w3-button w3-khaki w3-padding-large">Previous</a>
+  <a href="/q_02/" class="w3-button w3-orange w3-padding-large">Next</a>
+</div>
+
+{% endblock content %}
