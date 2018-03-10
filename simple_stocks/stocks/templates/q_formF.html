@@ -2,7 +2,8 @@
 
 {% block content %}
 <div class="w3-container w3-indigo w3-center" style="padding:120px 16px">
- <h1 class="w3-large w3-text-khaki w3-margin-bottom">Please answer two questions by selecting answers: </h1>
+ <h1 class="w3-large w3-text-khaki w3-margin-bottom">Please answer following questions by selecting answers: </h1>
+ <!-- <h1 class="w3-large w3-text-khaki w3-margin-bottom">B0. Please choose a 4-digit number as your entry.</h1> -->
  <h1 class="w3-large w3-text-khaki w3-margin-bottom">F1. How long you plan to keep your fund invested?</h1>
  <h1 class="w3-large w3-text-khaki w3-margin-bottom">F2. I would accept higher risk as a trade-off reaching my financial goal earlier than expected.</h1>
  <h1 class="w3-large w3-text-khaki w3-margin-bottom">F3. Please choose from following industries base on your preference. (Can have multiple choices)</h1>
@@ -13,7 +14,7 @@
   <table border="1" class="w3-ul w3-display-middle">
     {{ form }}
   </table>
-  <input class="w3-button w3-orange w3-padding-large w3-large w3-margin-top w3-ripple" type='submit' value='Submit'/>
+  <input href="/q_resultF/" class="w3-button w3-orange w3-padding-large w3-large w3-margin-top w3-ripple" type='submit' value='Submit'/>
  </form>
 </div>
 {% endblock content %}
