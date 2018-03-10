@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class b_answers(models.Model):
     T_CHOICES=[('T1','less than 1 year'),('T2','1-2 years'),('T3','3-5 years'),
                ('T4','6-10 years'),('T5','less than 1 year')]
@@ -8,6 +7,7 @@ class b_answers(models.Model):
     R_CHOICES=[('R1','strongly disagree'),('R2','disagree'),
                ('R3','agree'),('R4','strongly agree')]
     
+    #B0 = models.CharField(max_length=4)
     B1 = models.CharField(max_length=1, choices=T_CHOICES)
     B2 = models.CharField(max_length=1, choices=R_CHOICES)
     
@@ -31,6 +31,22 @@ class f_answers(models.Model):
                ('5510','Utilities'),
                ('6010','Real Estate')]
     
+    #F0 = models.CharField(max_length=4)
     F1 = models.CharField(max_length=1, choices=T_CHOICES)
     F2 = models.CharField(max_length=1, choices=R_CHOICES)
     F3 = models.CharField(max_length=1, choices=I_CHOICES)
+    
+    
+    
+class b_result(models.Model):
+    clean_B1 = models.CharField(max_length=1)
+    clean_B2 = models.CharField(max_length=1)
+    B_result = models.CharField(max_length=200)   
+    
+    
+class f_result(models.Model):
+    clean_F1 = models.CharField(max_length=1)
+    clean_F2 = models.CharField(max_length=1)
+    clean_F3 = models.CharField(max_length=1)
+    F_result = models.CharField(max_length=200)
+    
