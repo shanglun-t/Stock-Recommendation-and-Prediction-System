@@ -1,4 +1,5 @@
 from django import forms
+#from sector import StockSelection
 
 class brief_form(forms.Form):
     T_CHOICES=[('T1','less than 1 year'),('T2','1-2 years'),('T3','3-5 years'),
@@ -7,6 +8,7 @@ class brief_form(forms.Form):
     R_CHOICES=[('R1','strongly disagree'),('R2','disagree'),
                ('R3','agree'),('R4','strongly agree')]  
     
+    #B0 = forms.TextInput(attrs={'size': 4, 'title': 'Your entry', 'required': True})
     B1 = forms.ChoiceField(choices=T_CHOICES, widget=forms.RadioSelect())
     B2 = forms.ChoiceField(choices=R_CHOICES, widget=forms.RadioSelect())
     
@@ -16,8 +18,15 @@ class brief_form(forms.Form):
         B2 = cleaned_data.get('B2')
         if not B1 and not B2:
             raise forms.ValidationError('No answer submitted!')
-        
-        
+    
+    #def save_B(self, commit=True):
+    #    form_data = self.cleaned_data
+    #    self.instance.B1 = form_data['B1']
+    #    self.instance.B2 = form_data['B2']
+    #    self.instance.result_brief = self.calc_brief(form_data['B1'], form_data['B2']) 
+    #    return super(brief_form, self).save(commit)
+    
+
        
 class full_form(forms.Form):
     T_CHOICES=[('T1','less than 1 year'),('T2','1-2 years'),('T3','3-5 years'),
@@ -38,6 +47,7 @@ class full_form(forms.Form):
                ('5510','Utilities'),
                ('6010','Real Estate')]
     
+    #F0 = forms.TextInput(attrs={'size': 4, 'title': 'Your entry', 'required': True})
     F1 = forms.ChoiceField(choices=T_CHOICES, widget=forms.RadioSelect())
     F2 = forms.ChoiceField(choices=R_CHOICES, widget=forms.RadioSelect())
     F3 = forms.MultipleChoiceField(
@@ -52,3 +62,18 @@ class full_form(forms.Form):
         F3 = cleaned_data.get('F3')
         if not F1 and not F2 and not F3:
             raise forms.ValidationError('No answer submitted!')
+        
+    #def save_F(self, commit=True):
+    #    form_data = self.cleaned_data
+    #    self.instance.B1 = form_data['F1']
+    #    self.instance.B2 = form_data['F2']
+    #    self.instance.B2 = form_data['F3']
+    #    self.instance.result_full = self.calc_full(form_data['F1'], form_data['F2'], form_data['F3']) 
+    #    return super(full_form, self).save(commit)
+       
+    
+class brief_result_form(forms.Form):   
+    B_result = forms.CharField(widget=forms.Textarea)
+    
+class full_result_form(forms.Form):   
+    F_result = forms.CharField(widget=forms.Textarea) 
