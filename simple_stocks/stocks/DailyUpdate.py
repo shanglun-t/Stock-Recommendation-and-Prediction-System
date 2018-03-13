@@ -12,7 +12,7 @@ count = 0
 
 
 sumOfClose = np.array([])
-directory = os.path.join("/Users/shangluntsai/Capstone/simple_stocks/static/csv", "historical_data/")
+directory = os.path.join("/Users/user/Capstone/simple_stocks/static/csv", "historical_data/")
 for root, dirs,files in os.walk("historical_data"):
     for file in files:
        if file.endswith(".csv"):
@@ -33,7 +33,7 @@ for root, dirs,files in os.walk("historical_data"):
                 sector = None
                 industry = None
                 
-                with open("/Users/shangluntsai/Capstone/simple_stocks/static/csv/Workbook3.csv") as csvfile:
+                with open("/Users/user/Capstone/simple_stocks/static/csv/Workbook3.csv") as csvfile:
                     reader1 = csv.reader(csvfile, delimiter=',')
                     next(reader1)
                     file = file [0:-4]
