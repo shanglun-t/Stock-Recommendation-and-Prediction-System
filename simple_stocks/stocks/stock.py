@@ -12,7 +12,7 @@ import functools as ft
 def getStockInfo(industryList):
     ticker = list()
 
-    with open('/Users/shangluntsai/Capstone/simple_stocks/static/csv/industry_performance.csv') as csvfile:
+    with open('/Users/user/Capstone/simple_stocks/static/csv/industry_performance.csv') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         next(reader)
 
