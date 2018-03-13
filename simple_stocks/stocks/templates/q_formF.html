@@ -9,7 +9,7 @@
  <h1 class="w3-large w3-text-khaki w3-margin-bottom">F3. Please choose from following industries base on your preference. (Can have multiple choices)</h1>
 </div>
 <div class="w3-display-container w3-indigo" style="height:1600px;">
- <form class="w3-container w3-center" method="post" novalidate>
+ <form class="w3-container w3-center" method="post" action="/q_resultF/" novalidate>
   {% csrf_token %}
   <table border="1" class="w3-ul w3-display-middle">
     {{ form }}
