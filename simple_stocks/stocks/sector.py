@@ -22,7 +22,7 @@ class SectorSelection:
         
         
         # read csv file and create dictionary for each column
-        with open('{{ STATIC_URL }}csv/sector_performance.csv') as csvfile:
+        with open('/Users/user/Capstone/simple_stocks/static/csv/sector_performance.csv') as csvfile:
             reader = csv.reader(csvfile, delimiter=',')
             next(reader)
 
