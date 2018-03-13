@@ -5,12 +5,12 @@
  <h1 class="w3-large w3-text-khaki w3-margin-bottom">Please find our recommandation for you: </h1>
 </div>
 <div class="w3-display-container w3-indigo" style="height:200px;">
- <form class="w3-container w3-center" method="post" action="/q_resultF/" novalidate>
+ <form class="w3-container w3-center" method="post" novalidate>
   {% csrf_token %}
   <table border="1" class="w3-ul w3-display-middle">
     {{ form }}
   </table>
-  <a href="/q_disclaimer/" class="w3-button w3-khaki w3-padding-large w3-ripple">One more time</a>
+  <a href="/q_disclaimer/" class="w3-button w3-khaki w3-padding-large w3-ripple">Start over</a>
   <a href="/home/" class="w3-button w3-orange w3-padding-large w3-ripple">Got it</a>
  </form>
 </div>
