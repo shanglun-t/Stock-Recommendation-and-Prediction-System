@@ -1,32 +1,71 @@
-from django.shortcuts import render
+# for sector calcualtions
 
-# Create your views here.
-def home(request):
-    return render(request, 'start.html')
+from django.shortcuts import redirect
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import TemplateView
+from .forms import *
+from .stock import *
+import datetime
 
-def q_01(request):
-    return render(request, 'q_01.html')
 
-def q_02(request):
-    return render(request, 'q_02.html')
 
-def q_03(request):
-    return render(request, 'q_03.html')
+#import forms
 
-def q_04(request):
-    return render(request, 'q_04.html')
+class HomeView(TemplateView):
+    template_name = 'stocks/start.html'
+    def get(self, request):
+        return render(request, self.template_name)
 
-def q_05A(request):
-    return render(request, 'q_05A.html')
+class q_disclaimer(TemplateView):
+    template_name = 'stocks/q_disclaimer.html'
+    def get(self, request):
+        return render(request, self.template_name)
 
-def q_05B(request):
-    return render(request, 'q_05B.html')
 
-def q_05C(request):
-    return render(request, 'q_05C.html')
+class q_start(TemplateView):
+    template_name = 'stocks/q_start.html'
+    def get(self, request):
+        return render(request, self.template_name)
 
-def q_05D(request):
-    return render(request, 'q_05D.html')
+class getFormSelection ():
+    def __init__(self, B1, B2):
+        self.B1 = B1
+        self.B2 = B2
 
-def q_disclaimer(request):
-    return render(request, 'q_disclaimer.html')
+    def get_B1(self):
+        return self.__B1
+
+    def set_B1(self, B1):
+        self.__B1 = B1
+
+    def get_B2(self):
+        return self.__B2
+
+    def set_B2(self, B2):
+        self.__B2 = B2
+
+tada = getFormSelection('out', 'out')
+tada.set_B1('this is out')
+form = None
+
+class B_form(TemplateView):
+    template_name = 'stocks/q_formB.html'
+
+
+    def get(self, request):
+        form = brief_form()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = brief_form(request.POST)
+        if form.is_valid():
+            time = form.cleaned_data['B1']
+            risk = form.cleaned_data['B2']
+            print (time, risk)
+            self.result_B =  StockSelection('T1', 'R1')
+            self.resultList = self.result_B.getSelectedStockList()
+        return render(request,'stocks/q_resultB.html', {'resultList': self.resultList, 'risk':risk, 'time':time  })
+
+
+
+
