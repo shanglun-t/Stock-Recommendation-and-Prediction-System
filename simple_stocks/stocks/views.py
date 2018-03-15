@@ -62,9 +62,9 @@ class B_form(TemplateView):
             time = form.cleaned_data['B1']
             risk = form.cleaned_data['B2']
             print (time, risk)
-            self.result_B =  StockSelection('T1', 'R1')
+            self.result_B =  StockSelection(time, risk)
             self.resultList = self.result_B.getSelectedStockList()
-        return render(request,'stocks/q_resultB.html', {'resultList': self.resultList, 'risk':risk, 'time':time  })
+        return render(request,'stocks/q_resultB.html', {'resultList': self.resultList})
 
 
 

@@ -1,5 +1,6 @@
 import csv
 from .industry import *
+from decimal import *
 
 
 def getStockInfo(industryList):
@@ -13,7 +14,7 @@ def getStockInfo(industryList):
 
         for row in reader:
             if row[2] in industryList:
-                data = (row[0], row[1], row[2], float(row[5])*100)
+                data = (row[0], row[1], row[2],Decimal(float(row[5])*100).quantize(Decimal('1.00')))
                 result.append (data)
     return result
 
