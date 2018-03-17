@@ -8,8 +8,8 @@ class b_answers(models.Model):
                ('R3','agree'),('R4','strongly agree')]
     
     #B0 = models.CharField(max_length=4)
-    B1 = models.CharField(max_length=1, choices=T_CHOICES)
-    B2 = models.CharField(max_length=1, choices=R_CHOICES)
+    B1 = models.CharField(max_length=2, choices=T_CHOICES)
+    B2 = models.CharField(max_length=2, choices=R_CHOICES)
     
     
 class f_answers(models.Model):
@@ -50,3 +50,4 @@ class f_result(models.Model):
     clean_F3 = models.CharField(max_length=1)
     F_result = models.CharField(max_length=200)
     
+
