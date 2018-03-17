@@ -1,113 +1,70 @@
-from django.shortcuts import render 
+# for sector calcualtions
+
 from django.shortcuts import redirect
-from django.http import HttpResponse 
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-from django.views import generic
-from .forms import brief_form   
-from .forms import full_form
-from .forms import brief_result_form
-from .forms import full_result_form
-from .models import b_answers 
-from .models import f_answers 
-from .models import b_result 
-from .models import f_result
-
-# for calcualtions
-import csv
-import sys
-from collections import OrderedDict
-import numpy as np
-import scipy as sp
-import itertools
-from stocks.sector import *
-from stocks.performance import *
-from stocks.industry import *
-from stocks.DailyUpdate import *
-from stocks.stock import *
-#import forms 
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import TemplateView
+from .forms import *
+from .stock import *
+import datetime
 
 
-# Create your views here.
-def q_start(request):
-    return render(request, 'q_start.html')
+
+#import forms
+
+class HomeView(TemplateView):
+    template_name = 'stocks/start.html'
+    def get(self, request):
+        return render(request, self.template_name)
+
+class q_disclaimer(TemplateView):
+    template_name = 'stocks/q_disclaimer.html'
+    def get(self, request):
+        return render(request, self.template_name)
 
 
-def B_form(request):
-    if request.method == 'POST':
-        form = brief_form(request.POST)
-        if form.is_valid():
-            clean_B1 = form.cleaned_data['B1']
-            clean_B2 = form.cleaned_data['B2']
-            return redirect('q_resultB', clean_B1 = 'clean_B1', clean_B2 = 'clean_B2')
-            #cd = form.cleaned_data
-            #return redirect('q_resultB', cd)
-    else:
+class q_start(TemplateView):
+    template_name = 'stocks/q_start.html'
+    def get(self, request):
+        return render(request, self.template_name)
+
+class getFormSelection ():
+    def __init__(self, B1, B2):
+        self.B1 = B1
+        self.B2 = B2
+
+    def get_B1(self):
+        return self.__B1
+
+    def set_B1(self, B1):
+        self.__B1 = B1
+
+    def get_B2(self):
+        return self.__B2
+
+    def set_B2(self, B2):
+        self.__B2 = B2
+
+tada = getFormSelection('out', 'out')
+tada.set_B1('this is out')
+form = None
+
+class B_form(TemplateView):
+    template_name = 'stocks/q_formB.html'
+
+
+    def get(self, request):
         form = brief_form()
-        
-    return render(request, 'q_formB.html', {'form': form})
+        return render(request, self.template_name, {'form': form})
 
-
-def F_form(request):
-    if request.method == 'POST':
-        form = full_form(request.POST)
-        if form.is_valid():
-            clean_F1 = form.cleaned_data['F1']
-            clean_F2 = form.cleaned_data['F2']
-            clean_F3 = form.cleaned_data['F3']
-            return redirect('q_resultF', clean_F1 = 'clean_F1', clean_F2 = 'clean_F2', clean_F3 = 'clean_F3')
-    else:
-        form = full_form()
-        
-    return render(request, 'q_formF.html', {'form': form})
-
-
-def home(request):
-    return render(request, 'start.html')
-
-
-def q_disclaimer(request):
-    return render(request, 'q_disclaimer.html')
-
-# views of result pages
-
-def q_resultB(request):   
-    if request.method == 'POST':
+    def post(self, request):
         form = brief_form(request.POST)
         if form.is_valid():
-            clean_B1 = form.cleaned_data['clean_B1']
-            clean_B2 = form.cleaned_data['clean_B2']
-            result_B = StockSelection(clean_B1, clean_B2) 
-            print(form.cleaned_data['result_B'])
-    else:
-        form = brief_result_form()
-        
-    return render(request, 'q_resultB.html', {'form': form})
-
-
-def q_resultF(request):   
-    if request.method == 'POST':
-        form = full_form(request.POST)
-        if form.is_valid():
-            clean_F1 = form.cleaned_data['clean_F1']
-            clean_F2 = form.cleaned_data['clean_F2']
-            clean_F3 = form.cleaned_data['clean_F3']
-            result_F = StockSelection(clean_F1, clean_F2, clean_F3)  
-            print(form.cleaned_data['result_F'])
-    else:
-        form = full_result_form()
-        
-    return render(request, 'q_resultF.html', {'form': form})
-
-
-
-
-
-
-
-
-
-
+            time = form.cleaned_data['B1']
+            risk = form.cleaned_data['B2']
+            print (time, risk)
+            self.result_B =  StockSelection(time, risk)
+            self.resultList = self.result_B.getSelectedStockList()
+        return render(request,'stocks/q_resultB.html', {'resultList': self.resultList})
 
 
 
