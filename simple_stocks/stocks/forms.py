@@ -1,23 +1,26 @@
 from django import forms
-#from sector import StockSelection
+
 
 class brief_form(forms.Form):
-    T_CHOICES=[('T1','less than 1 year'),('T2','1-2 years'),('T3','3-5 years'),
-               ('T4','6-10 years'),('T5','less than 1 year')]
+    T_CHOICES=[['T1','Less than 1 year'],['T2','1-2 years'],['T3','3-5 years'],
+               ['T4','6-10 years'],['T5','More than 10 year']]
     
-    R_CHOICES=[('R1','strongly disagree'),('R2','disagree'),
-               ('R3','agree'),('R4','strongly agree')]  
-    
-    #B0 = forms.TextInput(attrs={'size': 4, 'title': 'Your entry', 'required': True})
-    B1 = forms.ChoiceField(choices=T_CHOICES, widget=forms.RadioSelect())
-    B2 = forms.ChoiceField(choices=R_CHOICES, widget=forms.RadioSelect())
+    R_CHOICES=[['R1','Strongly agree'],['R2','Agree'], ['R3','Disagree'],['R4','Strongly disagree']
+               ,]
+
+    B1 = forms.CharField(label='How long you plan to keep your fund invested?',
+                                    widget=forms.RadioSelect(choices=T_CHOICES))
+    B2 = forms.CharField(label='I would accept higher risk as a trade-off reaching my financial goal earlier than expected.',
+                         widget=forms.RadioSelect(choices=R_CHOICES))
+
     
     def clean(self):
-        cleaned_data = super(brief_form, self).clean()
-        B1 = cleaned_data.get('B1')
-        B2 = cleaned_data.get('B2')
-        if not B1 and not B2:
+        self.cleaned_data = super(brief_form, self).clean()
+        self.B1 = self.cleaned_data.get('B1')
+        self.B2 = self.cleaned_data.get('B2')
+        if not self.B1 and not self.B2:
             raise forms.ValidationError('No answer submitted!')
+        return self.cleaned_data
     
     #def save_B(self, commit=True):
     #    form_data = self.cleaned_data
@@ -30,7 +33,7 @@ class brief_form(forms.Form):
        
 class full_form(forms.Form):
     T_CHOICES=[('T1','less than 1 year'),('T2','1-2 years'),('T3','3-5 years'),
-               ('T4','6-10 years'),('T5','less than 1 year')]
+               ('T4','6-10 years'),('T5','more than 10 year')]
     
     R_CHOICES=[('R1','strongly disagree'),('R2','disagree'),
                ('R3','agree'),('R4','strongly agree')]
@@ -71,9 +74,7 @@ class full_form(forms.Form):
     #    self.instance.result_full = self.calc_full(form_data['F1'], form_data['F2'], form_data['F3']) 
     #    return super(full_form, self).save(commit)
        
+
     
-class brief_result_form(forms.Form):   
-    B_result = forms.CharField(widget=forms.Textarea)
-    
-class full_result_form(forms.Form):   
-    F_result = forms.CharField(widget=forms.Textarea) 
+
+
