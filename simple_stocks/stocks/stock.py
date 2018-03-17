@@ -1,25 +1,22 @@
-import csv 
-import sys
-from collections import OrderedDict
-import numpy as np
-import scipy as sp
-import os
-import stocks.industry
-import functools as ft
-
+import csv
+from .industry import *
+from decimal import *
 
 
 def getStockInfo(industryList):
     ticker = list()
 
-    with open('/Users/user/Capstone/simple_stocks/static/csv/industry_performance.csv') as csvfile:
+    with open('Back-End/industry_performance.csv') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         next(reader)
 
+        result = list()
+
         for row in reader:
             if row[2] in industryList:
-                print(row[0], row[1], row[2], row[3], row[4], row[5])
-    return 'Done'
+                data = (row[0], row[1], row[2],Decimal(float(row[5])*100).quantize(Decimal('1.00')))
+                result.append (data)
+    return result
 
 class StockSelection:
 
@@ -29,15 +26,16 @@ class StockSelection:
 
     def getSelectedStockList(self):
         
-        self.industryObj = industry.IndustrySelection(self.holdingPeriod, self.riskLevel)
+        self.industryObj = IndustrySelection(self.holdingPeriod, self.riskLevel)
         self.industryList= self.industryObj.getIndustryList()
 
-        getStockInfo(self.industryList)
+
         
 
-        return 'lo'
+        return getStockInfo(self.industryList)
 
 
-#st1 = StockSelection('T5', 'R3')
-#st1.getSelectedStockList()
+st1 = StockSelection('T5', 'R3')
+st1.getSelectedStockList()
+
 
