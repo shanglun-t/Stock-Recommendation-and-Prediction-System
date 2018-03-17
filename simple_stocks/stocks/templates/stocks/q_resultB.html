@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="w3-container w3-indigo w3-center" style="padding:80px">
+ <h1 class="w3-container w3-indigo w3-text-yellow">Recommended Stock Infomartion :</h1>
+</div>
+<div class="w3-display-container w3-indigo" >
+ <div style= " margin: -15px 350px">
+  {% csrf_token %}
+  <table >
+   <tr>
+     <th>Ticker</th>
+     <th>Sector</th>
+     <th>Industry</th>
+     <th>Return</th>
+   </tr>
+
+   {% for elm in resultList %}
+   <tr style="padding:50px 0">
+     <td style="padding:10px 10px">{{elm.0}}</td>
+     <td style="padding:10px 10px">{{elm.1}}</td>
+     <td style="padding:10px 50px">{{elm.2}}</td>
+     <td style="padding:10px 10px">{{elm.3}}%</td>
+   </tr>
+   {% endfor %}
+</table>
+
+
+
+  </div>
+  <div style= " margin: 100px 550px">
+    <a href="/q_disclaimer/" class="w3-button w3-khaki w3-padding-large w3-ripple">Try Again</a>
+    <a href="/home/" class="w3-button w3-orange w3-padding-large w3-ripple">Done</a>
+
+  </div>
+<br>
+
+</div>
+{% endblock content %}

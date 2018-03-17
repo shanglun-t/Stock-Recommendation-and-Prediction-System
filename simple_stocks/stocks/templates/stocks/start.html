@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'stocks/style.css' %}"/>
+
+{% block content %}
+<!-- Header -->
+<header class="tdStyle w3-indigo w3-container w3-text-yellow w3-center" style="padding:160px 16px" >
+  <!-- <img src='{% static "images/maldives-lie-beach.jpeg" %}'/> -->
+  <h1 class="w3-margin w3-jumbo">SIMPLE STOCKS</h1>
+  <h2 cass="w3-xlarge w3-text-yellow">Stocks Selection Made Easy</h2><br />
+  <a href="/q_disclaimer/" class="w3-button w3-orange w3-padding-large w3-large w3-margin-top">Get Started</a>
+</header>
+
+{% endblock content %}
+
+
