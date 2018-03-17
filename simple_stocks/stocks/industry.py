@@ -1,12 +1,7 @@
-import csv 
-import sys
-from collections import OrderedDict
-import numpy as np
-import scipy as sp
-import os
-import stocks.sector
+import csv
 import functools as ft
-import stocks.performance
+from  .performance import*
+from .sector import *
 
 
 class IndustrySelection:
@@ -14,25 +9,17 @@ class IndustrySelection:
     def __init__(self, holdingPeriod, riskLevel):
         self.holdingPeriod = holdingPeriod
         self.riskLevel = riskLevel
-        self. selectedSector = sector.SectorSelection(self.holdingPeriod, self.riskLevel)
+        self. selectedSector = SectorSelection(self.holdingPeriod, self.riskLevel)
         self.selectedSectorList = self.selectedSector.getSectorList()
         
     def getIndustryList (self):
-
-
-        '''
-        selectedSector = sector.SectorSelection(self.holdingPeriod, self.riskLevel)
-        selectedSectorList = selectedSector.getSectorList()
-        print ('check', selectedSectorList) '''
-        
-        
         industryVolatility = dict()
         industryRisk = dict()
         industryReturn = dict()
     
 
         # read csv file and create dictionary for each column
-        with open('/Users/user/Capstone/simple_stocks/static/csv/industry_performance.csv') as csvfile:
+        with open('Back-End/industry_performance.csv') as csvfile:
             reader = csv.reader(csvfile, delimiter=',')
             next(reader)
             
@@ -53,7 +40,7 @@ class IndustrySelection:
 
         
         
-        p1 = performance.SelectionByPerformance(self.holdingPeriod, self.riskLevel, industryVolatility, industryRisk, industryReturn)
+        p1 = SelectionByPerformance(self.holdingPeriod, self.riskLevel, industryVolatility, industryRisk, industryReturn)
         industryList = p1.getPerformanceList() 
         return industryList
     
