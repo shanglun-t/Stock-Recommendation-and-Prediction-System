@@ -20,14 +20,24 @@ class SelectionByPerformance:
     def reduceByValue(self, low, high, myDict):
         self.result = list()
         for k, v in myDict.items():
-                if  float(v) <= self.high :
+                if  float(v) <= self.low and float(v) <= self.high :
                     self.result.append (k)
-                    
+
+        if  len (self.result) <= 1:
+            self.result = []
+
+            self.high = self.high + self.high * 2
+            self.low = self.low - self.low * 2
+
+            for k, v in myDict.items():
+                if float(v) >= self.low and float(v) <= self.high:
+                    self.result.append(k)
+
         return self.result
     
     # provides list of Sector based on volatility and risk chosen by the user 
     def getPerformanceList(self):
-                
+
 
         # create 5 groups of sector based on volatility
         self.low = min (float(self.volatility[k]) for k in self.volatility)
@@ -48,6 +58,7 @@ class SelectionByPerformance:
             pass
             
         self.high = self.low + self.diff
+        print (' volatility high low',self.high, self.low)
 
         #reduce the list of sector based on the volatility range
         self.result =self.reduceByValue(self.low, self.high ,self.volatility)
@@ -64,16 +75,17 @@ class SelectionByPerformance:
        
         
         self.diff = (self.high - self.low)/2
+
         
         # select range of risk based on user input
         if self.riskLevel == 'R1' or self.riskLevel == 'R2':
-            pass
-        if self.riskLevel == 'R3' or self.riskLevel == 'R4':
             self.low = self.low + self.diff
+        if self.riskLevel == 'R3' or self.riskLevel == 'R4':
+            pass
 
             
         self.high = self.low + self.diff
-        
+        print(' risk high low', self.high, self.low)
         #reduce the list of sector based on the risk range
         self.result =self.reduceByValue(self.low, self.high ,self.risk)
 
@@ -101,3 +113,5 @@ class SelectionByPerformance:
         
         return self.result
 
+
+    
