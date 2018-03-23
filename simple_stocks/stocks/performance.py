@@ -20,14 +20,19 @@ class SelectionByPerformance:
     def reduceByValue(self, low, high, myDict):
         self.result = list()
         for k, v in myDict.items():
-                if  float(v) <= self.low and float(v) <= self.high :
+                if  float(v) >= self.low and float(v) <= self.high :
                     self.result.append (k)
 
-        if  len (self.result) <= 1:
+        if  len(self.result) <= 2:
+            self.low = self.low - self.low * 0.3
+            if len(self.result) <= 1:
+                self.low = self.low - self.low * 0.35
             self.result = []
 
-            self.high = self.high + self.high * 2
-            self.low = self.low - self.low * 2
+            self.high = self.high + self.high * 0.3
+
+
+
 
             for k, v in myDict.items():
                 if float(v) >= self.low and float(v) <= self.high:
@@ -37,7 +42,6 @@ class SelectionByPerformance:
     
     # provides list of Sector based on volatility and risk chosen by the user 
     def getPerformanceList(self):
-
 
         # create 5 groups of sector based on volatility
         self.low = min (float(self.volatility[k]) for k in self.volatility)
@@ -58,11 +62,11 @@ class SelectionByPerformance:
             pass
             
         self.high = self.low + self.diff
-        print (' volatility high low',self.high, self.low)
+        #print (' volatility high low',self.high, self.low)
 
         #reduce the list of sector based on the volatility range
         self.result =self.reduceByValue(self.low, self.high ,self.volatility)
-        #print ('Volatility', self.result)
+        print ('Volatility', self.result)
 
         
         self.risk = {k: self.risk[k] for k in self.result if k in self.risk}
@@ -85,11 +89,11 @@ class SelectionByPerformance:
 
             
         self.high = self.low + self.diff
-        print(' risk high low', self.high, self.low)
+        #print(' risk high low', self.high, self.low)
         #reduce the list of sector based on the risk range
         self.result =self.reduceByValue(self.low, self.high ,self.risk)
 
-        #print ('RISK', self.result)
+        print ('RISK', self.result)
 
         self.returns= {k: self.returns[k] for k in self.result if k in self.returns}
         

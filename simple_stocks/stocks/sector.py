@@ -28,7 +28,7 @@ class SectorSelection:
 
         s1 = SelectionByPerformance(self.holdingPeriod, self.riskLevel, sectorVolatility, sectorRisk, sectorReturn)
         sectorList = s1.getPerformanceList() 
-        print ('Selected Sector List', s1.getPerformanceList())
+        #print ('Selected Sector List', s1.getPerformanceList())
         return sectorList       
 
 

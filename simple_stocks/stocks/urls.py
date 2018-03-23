@@ -13,6 +13,7 @@ urlpatterns = [
     #Questionnaire
     url(r'^q_start/$', q_start.as_view(), name='q_start'),
     url(r'^q_formB/$', B_form.as_view(), name='q_formB.'),
+    url(r'^q_formF/$', F_form.as_view(), name='q_formF.'),
 
     #url(r'^q_resultF/$',views.q_resultF, name='q_resultF'),
 ] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

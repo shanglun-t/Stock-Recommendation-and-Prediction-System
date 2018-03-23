@@ -24,11 +24,12 @@ class IndustrySelection:
             next(reader)
             
             for row in reader:
-                #print (row [1], self.selectedSectorList, row[2], row[3])
-                if str(row[1]) in self.selectedSectorList:
-                    industryVolatility.setdefault(row[2], []).append(float(row[3]))
-                    industryRisk.setdefault(row[2], []).append(float(row[4]))
-                    industryReturn.setdefault(row[2], []).append(float(row[5]))
+                #print (row [0], row [1], row[2], row[3], row[4], row[5],row[6])
+                if str(row[2]) in self.selectedSectorList:
+                    industryVolatility.setdefault(row[3], []).append(float(row[4]))
+                    industryRisk.setdefault(row[3], []).append(float(row[5]))
+                    industryReturn.setdefault(row[3], []).append(float(row[6]))
+
 
 
         for k, v in industryVolatility.items():

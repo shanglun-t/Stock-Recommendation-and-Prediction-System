@@ -7,13 +7,11 @@
  <h1 class="w3-text-khaki w3-margin-bottom">Please answer following questions: </h1>
 </div>
 <div class="w3-display-container w3-indigo">
- <form method="POST"  novalidate style= " margin: 0 350px">
+ <form method="POST"  novalidate style= "margin: 0 350px">
   {% csrf_token %}
-   {{ form.as_ul }}
+  {{ form.as_ul }}
 
-
-
-  <br><button class="w3-button w3-orange w3-padding-large w3-margin-top w3-ripple" style= " margin: 0 250px" type='submit'> Submit</button>
+  <button class="w3-button w3-orange w3-padding-large w3-margin-top w3-ripple" style= " margin: 0 250px" type='submit'> Submit</button>
  </form>
  <br>
 </div>
