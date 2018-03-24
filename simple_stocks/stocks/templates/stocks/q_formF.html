@@ -1,20 +1,18 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
-<div class="w3-container w3-indigo w3-center" style="padding:120px 16px">
- <h1 class="w3-large w3-text-khaki w3-margin-bottom">Please answer following questions by selecting answers: </h1>
- <!-- <h1 class="w3-large w3-text-khaki w3-margin-bottom">B0. Please choose a 4-digit number as your entry.</h1> -->
- <h1 class="w3-large w3-text-khaki w3-margin-bottom">F1. How long you plan to keep your fund invested?</h1>
- <h1 class="w3-large w3-text-khaki w3-margin-bottom">F2. I would accept higher risk as a trade-off reaching my financial goal earlier than expected.</h1>
- <h1 class="w3-large w3-text-khaki w3-margin-bottom">F3. Please choose from following industries base on your preference. (Can have multiple choices)</h1>
+<div class="w3-container w3-indigo w3-center" style="padding:100px 5px">
+
+ <h1 class="w3-text-khaki w3-margin-bottom">Please answer following questions: </h1>
 </div>
-<div class="w3-display-container w3-indigo" style="height:1600px;">
- <form class="w3-container w3-center" method="post" novalidate>
+<div class="w3-display-container w3-indigo">
+ <form method="POST"  novalidate style= "margin: 0 350px">
   {% csrf_token %}
-  <table border="1" class="w3-ul w3-display-middle">
-    {{ form }}
-  </table>
-  <input href="/q_resultF/" class="w3-button w3-orange w3-padding-large w3-large w3-margin-top w3-ripple" type='submit' value='Submit'/>
+  {{ form.as_ul }}
+
+  <button class="w3-button w3-orange w3-padding-large w3-margin-top w3-ripple" style= " margin: 0 250px" type='submit'> Submit</button>
  </form>
+ <br>
 </div>
 {% endblock content %}
