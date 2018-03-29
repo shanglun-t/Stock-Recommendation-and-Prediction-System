@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView
 from .forms import *
 from .stock import *
+from .prediction import *
 import datetime
 
 
@@ -12,9 +13,21 @@ import datetime
 #import forms
 
 class HomeView(TemplateView):
-    template_name = 'stocks/start.html'
+    template_name = 'stocks/home.html'
     def get(self, request):
         return render(request, self.template_name)
+
+
+class AboutView(TemplateView):
+    template_name = 'stocks/about.html'
+    def get(self, request):
+        return render(request, self.template_name)
+
+class ContactView(TemplateView):
+    template_name = 'stocks/contact.html'
+    def get(self, request):
+        return render(request, self.template_name)
+
 
 class q_disclaimer(TemplateView):
     template_name = 'stocks/q_disclaimer.html'
@@ -37,14 +50,16 @@ class B_form(TemplateView):
         return render(request, self.template_name, {'form': form})
 
     def post(self, request):
+
         form = brief_form(request.POST)
         if form.is_valid():
             time = form.cleaned_data['B1']
             risk = form.cleaned_data['B2']
-            self.result_B =  StockSelection(time, time)
+            self.result_B =  StockSelection(time, risk)
             self.resultList = self.result_B.getSelectedStockList()
-        return render(request,'stocks/q_resultB.html', {'resultList': self.resultList})
-
+            self.predictionObj = StockPrediction(self.resultList)
+            self.predictionList = self.predictionObj.getStockPrediction()
+        return render(request,'stocks/q_resultB.html', {'resultList': self.resultList, 'predictionList': self.predictionList })
 
 
 
@@ -62,7 +77,8 @@ class F_form(TemplateView):
             time = form.cleaned_data['F1']
             risk = form.cleaned_data['F2']
             industryList = form.cleaned_data['F3']
-            self.result_B =  StockSelection(time, time)
+            self.result_B =  StockSelection(time, risk)
             self.resultList = self.result_B.getUserSelectedStockList(industryList)
-
-        return render(request,'stocks/q_resultB.html', {'resultList': self.resultList, 'industryList': industryList})
+            self.predictionObj = StockPrediction(self.resultList)
+            self.predictionList = self.predictionObj.getStockPrediction()
+        return render(request,'stocks/q_resultB.html', {'resultList': self.resultList, 'predictionList': self.predictionList})

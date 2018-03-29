@@ -23,7 +23,7 @@ class SelectionByPerformance:
                 if  float(v) >= self.low and float(v) <= self.high :
                     self.result.append (k)
 
-        if  len(self.result) <= 2:
+        if  len(self.result) <= 0:
             self.low = self.low - self.low * 0.3
             if len(self.result) <= 1:
                 self.low = self.low - self.low * 0.35

@@ -1,28 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="w3-container w3-indigo w3-center" style="padding:80px">
+<div class="w3-container w3-indigo w3-center" style="padding:50px">
  <h1 class="w3-container w3-indigo w3-text-yellow">Recommended Stock Infomartion :</h1>
 </div>
 <div class="w3-display-container w3-indigo" >
- <div style= " margin: -15px 250px">
+ <div style= " margin: -15px 50px">
   {% csrf_token %}
-     {{industryList}}
-  <table>
+
+  <table class = "resultTableClass">
    <tr>
      <th>Ticker</th>
      <th>Company Name</th>
      <th>Sector</th>
      <th>Industry</th>
-     <th>Return</th>
+     <th>Avg. Annual Return</th>
+     <th>Today's value  </th>
+     <th>Predicted value</th>
+     <th>Forecasted Growth</th>
    </tr>
-   {% for elm in resultList %}
+   {% for elm in predictionList %}
        <tr style="padding:50px 0">
          <td style="padding:10px 10px">{{elm.0}}</td>
          <td style="padding:10px 10px">{{elm.1}}</td>
          <td style="padding:10px 50px">{{elm.2}}</td>
          <td style="padding:10px 10px">{{elm.3}}</td>
-         <td style="padding:10px 10px">{{elm.4}}%</td>
+         <td style="padding:10px 10px, text-align: ">{{elm.4}}%</td>
+         <td style="padding:10px 10px, text-align: ">{{elm.5}}%</td>
+         <td style="padding:10px 10px, text-align: ">{{elm.6}}%</td>
+         <td style="padding:10px 10px, text-align: ">{{elm.7}}%</td>
+
        </tr>
    {% endfor %}
   </table>
