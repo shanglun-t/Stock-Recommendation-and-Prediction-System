@@ -49,22 +49,14 @@ class full_form(forms.Form):
                ('Diversified Financials','Diversified Financials'),('Insurance','Insurance'),
                ('Software & Services','Software & Services'), ('Technology Hardware & Equipment','Technology Hardware & Equipment'),
                ('Semiconductors & Semiconductor Equipment','Semiconductors & Semiconductor Equipment'),
-<<<<<<< HEAD
                ('Telecommunication Services','Telecommunication Services'),('Utilities', 'Utilities'),
-=======
-               ('Telecommunication Services','Telecommunication Services'),('Utilities','Utilities'),
->>>>>>> 564850d547b22da8f2fff1a2f2fd569ee6eb5fab
                ('Real Estate','Real Estate')]
     
     #F0 = forms.TextInput(attrs={'size': 4, 'title': 'Your entry', 'required': True})
     F1 = forms.ChoiceField(label='How long you plan to keep your fund invested?', choices=T_CHOICES, widget=forms.RadioSelect())
     F2 = forms.ChoiceField(label='I would accept higher risk as a trade-off reaching my financial goal earlier than expected.',choices=R_CHOICES, widget=forms.RadioSelect())
-<<<<<<< HEAD
     F3 = forms.MultipleChoiceField(label='Select your choice of industry/industries from the list',
-=======
-    F3 = forms.MultipleChoiceField(
->>>>>>> 564850d547b22da8f2fff1a2f2fd569ee6eb5fab
-         choices = I_CHOICES, 
+         choices = I_CHOICES,
          widget  = forms.CheckboxSelectMultiple,
          )
     
@@ -201,12 +193,3 @@ class full_form(forms.Form):
  Multi-Utilities
  Water Utilities
  '''
-
-<<<<<<< HEAD
-=======
-
-  
-    
-
-
->>>>>>> 564850d547b22da8f2fff1a2f2fd569ee6eb5fab
