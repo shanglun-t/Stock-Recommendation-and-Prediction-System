@@ -32,3 +32,10 @@ class SectorSelection:
         return sectorList       
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 564850d547b22da8f2fff1a2f2fd569ee6eb5fab

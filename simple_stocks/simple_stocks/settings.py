@@ -120,7 +120,11 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
+<<<<<<< HEAD
 STATIC_URL = '/static/'
+=======
+STATIC_URL = 'static/'
+>>>>>>> 564850d547b22da8f2fff1a2f2fd569ee6eb5fab
 
 STATICFILES_DIRS = [
     ('/Users/user/Capstone/simple_stocks/stocks/static/'),

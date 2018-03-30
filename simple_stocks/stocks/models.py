@@ -50,3 +50,7 @@ class f_result(models.Model):
     clean_F3 = models.CharField(max_length=1)
     F_result = models.CharField(max_length=200)
     
+<<<<<<< HEAD
+=======
+
+>>>>>>> 564850d547b22da8f2fff1a2f2fd569ee6eb5fab
