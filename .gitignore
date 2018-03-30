@@ -1,0 +1,4 @@
+# Ignoring the local build and local file of the project
+venv
+.idea
+.DS_Store
