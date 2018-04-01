@@ -14,7 +14,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import GridSearchCV
 
 # To plotting figures
-%matplotlib inline
+#%matplotlib inline
 import matplotlib
 import matplotlib.pyplot as plt
 plt.rcParams['axes.labelsize'] = 14
