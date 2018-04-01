@@ -83,5 +83,5 @@ class F_form(TemplateView):
             self.resultList = self.result_B.getUserSelectedStockList(industryList)
             self.predictionObj = StockPrediction(self.resultList)
             self.predictionList = self.predictionObj.getStockPrediction()
-        return render(request,'stocks/q_resultB.html', {'resultList': self.resultList, 'predictionList': self.predictionList})
+        return render(request,'stocks/q_resultB.html', { 'predictionList': self.predictionList})
 
