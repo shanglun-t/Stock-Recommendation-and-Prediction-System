@@ -8,12 +8,22 @@ urlpatterns = [
     #Home page
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^home/$', HomeView.as_view(), name='home'),
-    #Disclaimer
+
+
+    #about page
+    url(r'^about/$', AboutView.as_view(), name='about'),
+
+    #contact page
+    url(r'^contact/$', ContactView.as_view(), name='contact'),
+
+    #Disclaimer page
     url(r'^q_disclaimer/$', q_disclaimer.as_view(), name='q_disclaimer'),
-    #Questionnaire
+
+    #Questionnaire Page
     url(r'^q_start/$', q_start.as_view(), name='q_start'),
+
+
     url(r'^q_formB/$', B_form.as_view(), name='q_formB.'),
     url(r'^q_formF/$', F_form.as_view(), name='q_formF.'),
 
-    #url(r'^q_resultF/$',views.q_resultF, name='q_resultF'),
-] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    ]
