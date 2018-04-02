@@ -44,3 +44,6 @@ class IndustrySelection:
         p1 = SelectionByPerformance(self.holdingPeriod, self.riskLevel, industryVolatility, industryRisk, industryReturn)
         industryList = p1.getPerformanceList() 
         return industryList
+
+
+ 
