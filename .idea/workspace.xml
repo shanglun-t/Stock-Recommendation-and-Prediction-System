@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ed50d4-8223-41fe-bd60-0050a54bb1d3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/simple_stocks/stocks/prediction.py" afterPath="$PROJECT_DIR$/simple_stocks/stocks/prediction.py" />
-      <change beforePath="$PROJECT_DIR$/simple_stocks/stocks/stock.py" afterPath="$PROJECT_DIR$/simple_stocks/stocks/stock.py" />
-      <change beforePath="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_resultB.html" afterPath="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_resultB.html" />
+      <change beforePath="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formB.html" afterPath="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formB.html" />
+      <change beforePath="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formF.html" afterPath="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formF.html" />
+      <change beforePath="$PROJECT_DIR$/simple_stocks/stocks/views.py" afterPath="$PROJECT_DIR$/simple_stocks/stocks/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,27 +15,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="prediction.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/prediction.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="484">
+              <caret line="95" column="60" lean-forward="false" selection-start-line="95" selection-start-column="60" selection-end-line="95" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="q_formB.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formB.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h6#0;n#form#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="q_resultB.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_resultB.html">
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="32" selection-end-column="68" />
+            <state relative-caret-position="484">
+              <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="q_formF.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formF.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h6#0;n#form#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,21 +78,18 @@
         <option value="$PROJECT_DIR$/simple_stocks/stocks/static/style.css" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/static/stocks/style.css" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/start.html" />
-        <option value="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formF.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/simple_stocks/Back-End/DailyUpdate.py" />
         <option value="$PROJECT_DIR$/simple_stocks/simple_stocks/settings.py" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/industry.py" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/sector.py" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_start.html" />
-        <option value="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formB.html" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/urls.py" />
         <option value="$PROJECT_DIR$/simple_stocks/Back-End/train.py" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/models.py" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/forms.py" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/performance.py" />
         <option value="$PROJECT_DIR$/simple_stocks/Back-End/industry_performance.csv" />
-        <option value="$PROJECT_DIR$/simple_stocks/stocks/views.py" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/about.html" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/contact.html" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/templates/base.html" />
@@ -82,6 +98,9 @@
         <option value="$PROJECT_DIR$/simple_stocks/stocks/stock.py" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_resultB.html" />
         <option value="$PROJECT_DIR$/simple_stocks/stocks/prediction.py" />
+        <option value="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formF.html" />
+        <option value="$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formB.html" />
+        <option value="$PROJECT_DIR$/simple_stocks/stocks/views.py" />
       </list>
     </option>
   </component>
@@ -258,6 +277,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -342,13 +362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formF.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -357,31 +370,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/start.html" />
-    <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formB.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simple_stocks/Back-End/train_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -446,14 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920">
           <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -586,14 +570,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_resultB.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
           <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="32" selection-end-column="68" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#div#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -605,6 +597,43 @@
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formF.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#h6#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/templates/stocks/q_formB.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h6#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple_stocks/stocks/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="95" column="60" lean-forward="false" selection-start-line="95" selection-start-column="60" selection-end-line="95" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
