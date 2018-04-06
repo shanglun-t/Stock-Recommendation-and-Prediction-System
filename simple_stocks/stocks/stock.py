@@ -18,7 +18,7 @@ def getStockInfo(industryList):
         result = list()
         print (industryList)
         for row in reader:
-            data = (row[0], row[1], row[2], row[3], Decimal(float(row[6])* 10 * 252 ).quantize(Decimal('1.00')))
+            data = (row[0], row[1], row[2], row[3], float(row[6])* 10 * 252 )
 
             if data[3] in industryList:
                 #data = (row[0], row[1], row[2], row[3], Decimal(float(row[6])*100).quantize(Decimal('1.00')))
@@ -46,15 +46,10 @@ class StockSelection:
         self.indusrtyListByUser = indusrtyListByUser
         result = list()
 
-        return getStockInfo(self.industryList)
-
-
-    def getUserSelectedStockList(self, indusrtyListByUser):
-
-        self.indusrtyListByUser = list ()
-        for elm in indusrtyListByUser:
-            print (elm)
-            self.indusrtyListByUser.append(str(elm))
+        for elm in self.indusrtyListByUser:
+            result.append(elm)
 
         return getStockInfo(self.indusrtyListByUser)
 
+
+     
