@@ -16,8 +16,8 @@
      <th>Sector</th>
      <th>Industry</th>
      <th>Avg. Annual Return</th>
-     <th>Today's value  </th>
-     <th>Predicted value</th>
+     <th>Current price</th>
+     <th>Predicted price</th>
      <th>Forecasted Growth</th>
    </tr>
    {% for elm in predictionList %}
@@ -28,9 +28,10 @@
          <td style="padding:10px 50px">{{elm.2}}</td>
          <td style="padding:10px 10px">{{elm.3}}</td>
          <td style="padding:10px 10px, text-align: ">{{elm.4}}%</td>
-         <td style="padding:10px 10px, text-align: ">{{elm.5}}%</td>
-         <td style="padding:10px 10px, text-align: ">{{elm.6}}%</td>
+         <td style="padding:10px 10px, text-align: ">$ {{elm.5}}</td>
+         <td style="padding:10px 10px, text-align: ">$ {{elm.6}}</td>
          <td style="padding:10px 10px, text-align: ">{{elm.7}}%</td>
+
 
 
        </tr>
