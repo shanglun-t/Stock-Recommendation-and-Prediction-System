@@ -29,9 +29,8 @@ class brief_form(forms.Form):
     #    self.instance.result_brief = self.calc_brief(form_data['B1'], form_data['B2'])
     #    return super(brief_form, self).save(commit)
 
-    
 
-       
+
 class full_form(forms.Form):
     T_CHOICES=[('T1','less than 1 year'),('T2','1-2 years'),('T3','3-5 years'),
                ('T4','6-10 years'),('T5','more than 10 year')]
@@ -60,7 +59,7 @@ class full_form(forms.Form):
          choices = I_CHOICES,
          widget  = forms.CheckboxSelectMultiple,
          )
-    
+
     def clean(self):
         cleaned_data = super(full_form, self).clean()
         F1 = cleaned_data.get('F1')
@@ -68,7 +67,6 @@ class full_form(forms.Form):
         F3 = cleaned_data.get('F3')
         if not F1 and not F2 and not F3:
             raise forms.ValidationError('No answer submitted!')
-        
  
 
     
