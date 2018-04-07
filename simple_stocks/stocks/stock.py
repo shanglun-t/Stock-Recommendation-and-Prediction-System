@@ -52,4 +52,19 @@ class StockSelection:
         return getStockInfo(self.indusrtyListByUser)
 
 
+
+        return getStockInfo(self.industryList)
+
+
+    def getUserSelectedStockList(self, indusrtyListByUser):
+
+        self.indusrtyListByUser = indusrtyListByUser
+        result = list()
+
+        for elm in self.indusrtyListByUser:
+            result.append(elm)
+
+        return getStockInfo(self.indusrtyListByUser)
+
+
      
