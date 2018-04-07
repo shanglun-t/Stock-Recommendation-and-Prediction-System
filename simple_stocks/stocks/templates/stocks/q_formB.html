@@ -9,6 +9,7 @@
 <div class="w3-display-container w3-indigo">
  <form method="POST"  novalidate style= "margin: 0 350px">
   {% csrf_token %}
+   <h6 style= "color : yellow">{{Errmsg}}</h6> <br>
   {{ form }}
 
 
