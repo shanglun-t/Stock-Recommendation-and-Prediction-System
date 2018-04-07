@@ -62,7 +62,13 @@ class B_form(TemplateView):
             self.resultList = self.result_B.getSelectedStockList()
             self.predictionObj = StockPrediction(self.resultList)
             self.predictionList = self.predictionObj.getStockPrediction()
-        return render(request,'stocks/q_resultB.html', { 'predictionList': self.predictionList })
+            return render(request,'stocks/q_resultB.html', { 'predictionList': self.predictionList })
+        else:
+            form = brief_form()
+            Errmsg = '* Please answer all the question below'
+            return render(request, self.template_name, {'form': form, 'Errmsg':Errmsg})
+
+
 
 
 class F_form(TemplateView):
@@ -83,6 +89,11 @@ class F_form(TemplateView):
             self.resultList = self.result_B.getUserSelectedStockList(industryList)
             self.predictionObj = StockPrediction(self.resultList)
             self.predictionList = self.predictionObj.getStockPrediction()
-        return render(request,'stocks/q_resultB.html', { 'predictionList': self.predictionList})
+            return render(request,'stocks/q_resultB.html', { 'predictionList': self.predictionList})
 
-   
+        else:
+            form = full_form()
+            Errmsg = '* Please answer all the question below'
+            return render(request, self.template_name, {'form': form, 'Errmsg':Errmsg})
+
+  
