@@ -67,9 +67,6 @@ class full_form(forms.Form):
         F3 = cleaned_data.get('F3')
         if not F1 and not F2 and not F3:
             raise forms.ValidationError('No answer submitted!')
- 
-
-    
 
 
 
