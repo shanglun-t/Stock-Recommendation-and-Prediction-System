@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from bs4 import BeautifulSoup 
 from math import floor
 
-TICKER = "AAL"  # for testing
+TICKER = "AAL"  # line for testing - disable when updating entire directory
 DATA_ROOT = os.getcwd()
 DATA_PATH = DATA_ROOT + "/historical_data/"
 
