@@ -1,5 +1,4 @@
 ### Taining new models and saving trained models ###
-### Taining new models and saving trained models ###
 
 import os
 import csv
