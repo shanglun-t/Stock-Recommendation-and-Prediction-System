@@ -1,5 +1,7 @@
 ### Taining new models and saving trained models ###
 
+### Taining new models and saving trained models ###
+
 import os
 import csv
 import pandas as pd
@@ -18,12 +20,20 @@ class modelUpdate:
     MODEL_PATH = DATA_ROOT + "/models/"
     RESULT_PATH = DATA_ROOT + "/pred_results/"
     
-    def __init__(self):
+    
+    def __init__(self, model=None, pred_result=None):
         pass
     
     def trained_models(self):
         
-        for TICKER in listdir(DATA_PATH):
+        with open(DATA_ROOT + "workbook3.csv") as csvfile: 
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            for row in reader:
+            tickers = list(row[0])
+            
+            
+        for model in tickers:
             
             MODEL_FILE = TICKER + "_svr.sav"
             MODEL_URL  = MODEL_PATH + MODEL_FILE
@@ -47,18 +57,26 @@ class modelUpdate:
                     
                     
             # Training models in RBF kernel  C=100, Gamma=100
-            svr_rbf = SVR(kernel='rbf', C=1000, epsilon=0.001, gamma=1000)
+            model = SVR(kernel='rbf', C=1000, epsilon=0.001, gamma=1000)
                 
             #svr_rbf.fit(X_train, y_train)
-            svr_rbf.fit(X_train, np.ravel(y_train,order='F'))
+            model.fit(X_train, np.ravel(y_train,order='F'))
             
             # save trained model at '/models/' 
-            pickle.dump(svr_rbf, open(MODEL_URL, 'wb'))
+            pickle.dump(model, open(MODEL_URL, 'wb'))
+            
     
     
-    def pred_results(self, modle=svr_rbf, X=X_test):
+    def get_results(self, modle=model, X=X_test):
         
-        for TICKER in listdir(DATA_PATH):
+        with open(DATA_ROOT + "workbook3.csv") as csvfile: 
+            reader = csv.reader(csvfile, delimiter=',')
+            next(reader)
+            for row in reader:
+            tickers = list(row[0])
+            
+            
+        for file in tickers:
             
             RESULT_FILE = TICKER + "_res.csv"
             RESULT_URL = RESULT_PATH + RESULT_PATH
@@ -71,3 +89,4 @@ class modelUpdate:
             
            
     
+
