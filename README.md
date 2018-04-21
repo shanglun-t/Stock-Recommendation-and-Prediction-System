@@ -1,4 +1,4 @@
-# CS595-Capstone-Project-Stock-Recommendation-and-Prediction-System
+#Stock-Recommendation-and-Prediction-System
 
 Authors:  Shang Lun Tsai and Jaydip Bhakta  
 
